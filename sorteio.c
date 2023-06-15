@@ -10,23 +10,23 @@ void printTitle() {
 }
 
 int main() {
-    char input[10];
+    char input[10]; // Suporta uma string de 10 caracteres (consegue ir de 1 até 99999999)
     int min, max;
     char resposta;
 
     printTitle();
 
     do {
-        printf("Digite a faixa de valores (min-max): ");
+        printf("Digite a faixa de números (menor-maior): ");
         scanf("%s", input);
 
-        // Usando a função strtok() para dividir a entrada em dois números
+        // Usando a função strtok() para dividir a entrada em dois valores numéricos
         char *token = strtok(input, "-");
         min = atoi(token);
         token = strtok(NULL, "-");
         max = atoi(token);
 
-        // Configurando a semente do gerador de números aleatórios
+        // Configurando o "seeder" do gerador de números aleatórios
         srand(time(NULL));
 
         // Gerando um número aleatório dentro do intervalo especificado
